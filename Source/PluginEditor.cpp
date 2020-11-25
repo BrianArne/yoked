@@ -10,20 +10,24 @@
 #include "PluginEditor.h"
 
 //==============================================================================
-NewProjectAudioProcessorEditor::NewProjectAudioProcessorEditor (NewProjectAudioProcessor& p)
-    : AudioProcessorEditor (&p), audioProcessor (p)
+YokedAudioProcessorEditor::YokedAudioProcessorEditor (YokedAudioProcessor& p)
+    : AudioProcessorEditor(&p), audioProcessor (p),
+      gainSlider(juce::Slider::SliderStyle::Rotary, juce::Slider::TextBoxBelow)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
+    addAndMakeVisible(gainSlider);
+    gainSlider.addListener(this);
+    
     setSize (400, 300);
 }
 
-NewProjectAudioProcessorEditor::~NewProjectAudioProcessorEditor()
+YokedAudioProcessorEditor::~YokedAudioProcessorEditor()
 {
 }
 
 //==============================================================================
-void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
+void YokedAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
@@ -33,8 +37,17 @@ void NewProjectAudioProcessorEditor::paint (juce::Graphics& g)
     g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
-void NewProjectAudioProcessorEditor::resized()
+void YokedAudioProcessorEditor::resized()
 {
     // This is generally where you'll want to lay out the positions of any
     // subcomponents in your editor..
+    gainSlider.setBounds(getLocalBounds());
 }
+
+//==============================================================================
+void YokedAudioProcessorEditor::sliderValueChanged (juce::Slider* slider)
+{
+    
+}
+
+
