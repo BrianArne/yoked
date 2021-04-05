@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="ixDn6g" name="NewProject" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              companyName="BrianArne" pluginName="Yoked" pluginDesc="Yoked"
+              aaxIdentifier="com.BrianArne.Yoked">
   <MAINGROUP id="b0MRTa" name="NewProject">
     <GROUP id="{A9729D29-65A4-A3D7-BD0A-43D1063A6588}" name="Source">
       <FILE id="T59Dwf" name="PluginProcessor.cpp" compile="1" resource="0"

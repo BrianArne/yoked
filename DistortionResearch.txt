@@ -1,0 +1,69 @@
+*********************
+*Types of Distortion*
+*********************
+
+- Saturation
+
+- Valve (Tube?)
+
+- Tape
+
+- Clip (symmetric or asymetric)
+  Hard clipping
+  Symmetrical makes high amplitude odd harmonics
+  Asymetrical makes both even and odd
+
+- Vacuum (?same as valve?)
+
+**************
+*Oversampling*
+**************
+
+?What exactly does over sampling do?
+  ? Do we over sample, get some values, and then low pass them at an audible range?
+  ? What does oversampling do to the remaining soundwave? 
+
+- 2x
+
+
+- 4x
+
+*********************************
+*Pre and Post Distortion Filters*
+*********************************
+
+- What type of filters should go where?
+  * ClipDist has a high pass in the front, and two low passes at the end?
+  SHould a user be able to control the type of filter on the fronst/
+    - Why type of filter? Multiband? Single lp/hp
+
+
+
+
+************
+*Questions?*
+************
+
+  What do we want to see visually?
+  What is a waveshapper?
+  Are we looking for a waveshapper?
+    How does waveshapper even fit in in this context?
+  What type of layout would we expect for a distortion with so many options?
+
+******************
+*2nd vs 3rd order*
+******************
+See Revivter of DSP Fielding
+
+- How is this different from vaccum vs symettrical clip?
+- Is there a name for this?
+- Where would we expect this in processing?
+
+
+Air Windows
+
+Misstortion
+
+Sound Toys
+
+Spice Modeling

@@ -150,11 +150,26 @@ void YokedAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
+    float previousGain = 0;
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
-        auto* channelData = buffer.getWritePointer (channel);
-
-        // ..do something to the data...
+        // Get input values from the buffer
+        // Multiply by the gain value
+        // Stuff back into the same buffer
+        // ApplyGainRamp() ? ApplyGain()
+        auto* inChannel = buffer.getReadPointer(channel);
+        auto* outChannel = buffer.getWritePointer(channel);
+        auto* gain = apvts.getRawParameterValue("GAIN"); // This would be how we access the gain value;
+        if (previousGain == 0){
+            buffer.applyGain(0, buffer.getNumSamples(), gain->load());
+            previousGain = gain->load();
+        }else{
+            if(gain->load() == 9.0){
+                bool check = true;
+            }
+            buffer.applyGainRamp(channel, 0, buffer.getNumSamples(), previousGain, gain->load());
+            previousGain = gain->load();
+        }
     }
 }
 
